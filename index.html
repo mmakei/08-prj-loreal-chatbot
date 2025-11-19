@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chat Assistant</title>
+    <title>L'Oréal Smart Product Advisor</title>
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
@@ -19,7 +19,18 @@
     <div class="page-wrapper">
       <!------- Header / Branding ------->
       <header class="site-header">
-        <h1 class="site-title">Smart Product Advisor</h1>
+        <div class="brand-wrap">
+          <!-- Uses your existing logo at img/loreal-logo.png -->
+          <img
+            src="img/loreal-logo.png"
+            alt="L'Oréal Logo"
+            class="brand-logo"
+          />
+          <div class="brand-text">
+            <h1 class="site-title">L'Oréal</h1>
+            <p class="site-subtitle">Smart Product &amp; Routine Advisor</p>
+          </div>
+        </div>
       </header>
 
       <!------- Chat Area ------->
@@ -29,13 +40,18 @@
             <!-- messages will be appended here via JS -->
           </div>
 
+          <!-- LevelUp: show latest user question above response -->
+          <div id="currentQuestion" class="current-question">
+            <!-- Filled dynamically, e.g. “You asked: What’s the best routine for oily skin?” -->
+          </div>
+
           <form id="chatForm" class="chat-form">
             <label for="userInput" class="visually-hidden">Message</label>
             <input
               id="userInput"
               name="userInput"
               type="text"
-              placeholder="Ask me about products or routines…"
+              placeholder="Ask me about L'Oréal products or routines…"
               autocomplete="off"
               required
             />
@@ -49,7 +65,7 @@
 
       <!------- Footer Links ------->
       <footer class="site-footer">
-        <p>&copy; 2025 Company Name. All rights reserved.</p>
+        <p>&copy; 2025 L'Oréal (Student Project). All rights reserved.</p>
         <nav>
           <!-- These URLs are placeholders -->
           <a href="#">Privacy Policy</a>
@@ -59,8 +75,9 @@
       </footer>
     </div>
 
-    <!-- secrets.js can be removed when using Cloudflare Workers for API requests -->
-    <script src="secrets.js"></script>
+    <!-- When using Cloudflare Workers, you can delete secrets.js and remove this line -->
+    <!-- <script src="secrets.js"></script> -->
+
     <script src="script.js"></script>
   </body>
 </html>
